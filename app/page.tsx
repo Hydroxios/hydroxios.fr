@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import type { CSSProperties } from "react";
 import { Link } from "./types";
 import Title from "./components/Title";
+import PcbBackground from "./components/PcbBackground";
 
 export default function Home() {
 
@@ -48,19 +49,21 @@ export default function Home() {
   ]
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-center px-6 py-24 text-center bg-white dark:bg-black sm:px-10">
+    <div className="relative isolate flex min-h-screen flex-col flex-1 items-center justify-center overflow-hidden bg-black font-sans text-white">
+      <PcbBackground />
+      <div className="pointer-events-none absolute inset-0 z-[5] bg-black/38 backdrop-blur-[3px]" />
+      <main className="relative z-10 flex flex-1 w-full max-w-4xl flex-col items-center justify-center px-6 py-24 text-center sm:px-10">
         <section className="flex w-full flex-col items-center gap-10">
           <div className="flex w-full max-w-3xl flex-col items-center gap-5">
             <Title/>
           </div>
 
-          <div className="flex flew-row w-full gap-4 items-center justify-center">
+          <div className="flex flex-row w-full gap-4 items-center justify-center">
             {HERO_LINKS.map((link) => (
               <NextLink
                 key={link.href}
                 href={link.href}
-                className="group relative overflow-hidden w-50 border border-white hover:bg-white bg-black p-2 transition-all duration-500 hover:shadow-lg/20 hover:shadow-white"
+                className="group relative overflow-hidden w-50 border border-white/80 bg-black/45 p-2 backdrop-blur-[2px] transition-all duration-500 hover:bg-white hover:shadow-lg/20 hover:shadow-white"
               >
                 <span className="inline-flex text-sm font-medium text-white group-hover:text-black duration-500">
                   {link.label}
@@ -70,7 +73,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <div className="flex flex-row gap-4 mb-5 items-center justify-center">
+      <div className="relative z-10 flex flex-row gap-4 mb-5 items-center justify-center">
           {LINKS.map((link) => 
             <NextLink
               key={link.label}
