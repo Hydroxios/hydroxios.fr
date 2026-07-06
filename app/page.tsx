@@ -35,7 +35,8 @@ export default function Home() {
     {
       label: "Github",
       href: "https://github.com/hydroxios",
-      icon: "github.svg"
+      icon: "github.svg",
+      blank: true
     },
     {
       label: "X",
