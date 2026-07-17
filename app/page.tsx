@@ -4,19 +4,9 @@ import type { CSSProperties } from "react";
 import { Link } from "./types";
 import Title from "./components/Title";
 import PcbBackground from "./components/PcbBackground";
+import TwitchEmbed from "./components/TwitchEmbed";
 
 export default function Home() {
-
-  const HERO_LINKS = [
-    {
-      label: "Mods / Plugins Minecraft",
-      href: "/minecraft",
-    },
-    {
-      label: "Bots Discord",
-      href: "/discord-bots",
-    },
-  ]
 
   const LINKS :Link[] = [
     {
@@ -52,25 +42,12 @@ export default function Home() {
     <div className="relative isolate flex min-h-screen flex-col flex-1 items-center justify-center overflow-hidden bg-black font-sans text-white">
       <PcbBackground />
       <div className="pointer-events-none absolute inset-0 z-[5] bg-black/38 backdrop-blur-[3px]" />
-      <main className="relative z-10 flex flex-1 w-full max-w-4xl flex-col items-center justify-center px-6 py-24 text-center sm:px-10">
-        <section className="flex w-full flex-col items-center gap-10">
-          <div className="flex w-full max-w-3xl flex-col items-center gap-5">
+      <main className="relative z-10 flex flex-1 w-full max-w-[1720px] flex-col items-center justify-center px-6 py-0 text-center sm:px-10 lg:py-2">
+        <section className="flex w-full flex-col items-center gap-2">
+          <div className="flex w-full max-w-3xl flex-col items-center gap-0">
             <Title/>
           </div>
-
-          <div className="flex flex-row w-full gap-4 items-center justify-center">
-            {HERO_LINKS.map((link) => (
-              <NextLink
-                key={link.href}
-                href={link.href}
-                className="group relative overflow-hidden w-50 border border-white/80 bg-black/45 p-2 backdrop-blur-[2px] transition-all duration-500 hover:bg-white hover:shadow-lg/20 hover:shadow-white"
-              >
-                <span className="inline-flex text-sm font-medium text-white group-hover:text-black duration-500">
-                  {link.label}
-                </span>
-              </NextLink>
-            ))}
-          </div>
+          <TwitchEmbed />
         </section>
       </main>
       <div className="relative z-10 flex flex-row gap-4 mb-5 items-center justify-center">
