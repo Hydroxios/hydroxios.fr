@@ -3,5 +3,4 @@ export interface Link {
     href: string
     icon: string
     color?: string
-    blank?: boolean
 }

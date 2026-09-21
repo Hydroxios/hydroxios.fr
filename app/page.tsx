@@ -1,77 +1,104 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import type { CSSProperties } from "react";
-import { Link } from "./types";
-import Title from "./components/Title";
 import PcbBackground from "./components/PcbBackground";
 import TwitchEmbed from "./components/TwitchEmbed";
+import type { Link } from "./types";
+
+const SOCIAL_LINKS: Link[] = [
+  { label: "YouTube", href: "https://www.youtube.com/@Hydroxios", icon: "/youtube.svg", color: "rgba(255, 0, 0, 0.7)"},
+  { label: "Twitch", href: "https://www.twitch.tv/hydroxios", icon: "/twitch.svg", color: "rgba(145, 70, 255, 0.95)"},
+  { label: "GitHub", href: "https://github.com/hydroxios", icon: "/github.svg", color: "rgba(255, 255, 255, 0.6)"},
+  { label: "X", href: "https://x.com/Hydroxios", icon: "/x.svg", color: "rgba(255, 255, 255, 0.6)"},
+];
+
+const PROJECTS = [
+  {
+    title: "Minecraft",
+    description: "Mods, plugins et outils pour Minecraft.",
+    href: "/minecraft",
+    accent: "#58f0b5",
+  },
+  {
+    title: "Discord",
+    description: "Bots et intégrations pour les communautés Discord.",
+    href: "/discord-bots",
+    accent: "#9b7cff",
+  },
+] as const;
 
 export default function Home() {
-
-  const LINKS :Link[] = [
-    {
-      label: "Youtube",
-      href: "https://www.youtube.com/@Hydroxios",
-      icon: "youtube.svg",
-      color: "rgba(255, 0, 0, 0.55)",
-      blank: true
-    },
-    {
-      label: "Twitch",
-      href: "https://www.twitch.tv/hydroxios",
-      icon: "/twitch.svg",
-      color: "rgba(145, 70, 255, 0.95)",
-      blank: true
-    },
-    {
-      label: "Github",
-      href: "https://github.com/hydroxios",
-      icon: "github.svg",
-      blank: true
-    },
-    {
-      label: "X",
-      href: "https://x.com/Hydroxios",
-      icon: "/x.svg",
-      color: "rgba(255, 255, 255, 0.45)",
-      blank: true
-    }
-  ]
-
   return (
-    <div className="relative isolate flex min-h-screen flex-col flex-1 items-center justify-center overflow-hidden bg-black font-sans text-white">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-black text-white selection:bg-cyan-200 selection:text-black">
       <PcbBackground />
-      <div className="pointer-events-none absolute inset-0 z-[5] bg-black/38 backdrop-blur-[3px]" />
-      <main className="relative z-10 flex flex-1 w-full max-w-[1720px] flex-col items-center justify-center px-6 py-0 text-center sm:px-10 lg:py-2">
-        <section className="flex w-full flex-col items-center gap-2">
-          <div className="flex w-full max-w-3xl flex-col items-center gap-0">
-            <Title/>
-          </div>
+      <div className="pointer-events-none fixed inset-0 z-[1] bg-black/48" />
+      <div className="pointer-events-none fixed inset-0 z-[2] bg-[radial-gradient(circle_at_50%_25%,transparent_0%,rgba(0,0,0,0.2)_50%,rgba(0,0,0,0.78)_100%)]" />
+
+      <header className="relative z-10 mx-auto flex w-full max-w-[1500px] items-center justify-between px-6 py-4 sm:px-10">
+        <NextLink href="/" className="flex items-center gap-2.5 text-sm font-semibold tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200" aria-label="Accueil Hydroxios">
+          <Image src="/logo.png" alt="" width={646} height={646} priority className="size-11 object-contain" />
+          <span>Hydroxios</span>
+        </NextLink>
+
+        <nav aria-label="Navigation principale" className="flex items-center gap-5 text-sm text-white/55 sm:gap-7">
+          <a href="#twitch" className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200">Twitch</a>
+          <a href="#projets" className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200">Projets</a>
+        </nav>
+      </header>
+
+      <main className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-1 flex-col px-6 pb-8 sm:px-10 mt-20">
+        <section id="twitch" className="scroll-mt-4">
           <TwitchEmbed />
         </section>
+
+        <section id="projets" className="scroll-mt-6 py-12 sm:py-16" aria-labelledby="projects-title">
+          <div className="mb-5 flex items-end justify-between gap-5">
+            <div>
+              <h2 id="projects-title" className="text-2xl font-semibold">Projets</h2>
+              <p className="mt-1 text-sm text-white/45">Quelques domaines sur lesquels je travaille.</p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {PROJECTS.map((project) => (
+              <NextLink
+                key={project.href}
+                href={project.href}
+                className="group relative overflow-hidden border border-white/15 bg-black/35 p-6 transition-all hover:-translate-y-0.5 hover:border-white/35 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 motion-reduce:transform-none sm:p-7"
+                style={{ "--project-accent": project.accent } as CSSProperties}
+              >
+                <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[var(--project-accent)] via-[var(--project-accent)]/60 to-transparent" />
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <h3 className="text-xl font-semibold transition-colors group-hover:text-[var(--project-accent)]">{project.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/48">{project.description}</p>
+                  </div>
+                  <span aria-hidden="true" className="mt-1 text-white/35 transition-transform group-hover:translate-x-1 group-hover:text-white motion-reduce:transform-none">→</span>
+                </div>
+              </NextLink>
+            ))}
+          </div>
+        </section>
       </main>
-      <div className="relative z-10 flex flex-row gap-4 mb-5 items-center justify-center">
-          {LINKS.map((link) => 
+
+      <footer className="relative z-10 mx-auto flex w-full max-w-[1500px] items-center justify-between gap-5 px-6 py-5 sm:px-10">
+        <p className="text-xs text-white/30">© {new Date().getFullYear()} Hydroxios</p>
+        <div className="flex items-center gap-1" aria-label="Réseaux sociaux">
+          {SOCIAL_LINKS.map((link) => (
             <NextLink
               key={link.label}
               href={link.href}
-              target={link.blank === false ? undefined : "_blank"}
-              rel={link.blank === false ? undefined : "noreferrer"}
-              className="group cursor-pointer bg-transparent transition-all hover:scale-110"
+              target={"_blank"}
+              rel={"noreferrer"}
+              className="group grid size-10 place-items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
               style={{ "--link-shadow": link.color ?? "rgba(255, 255, 255, 0.45)" } as CSSProperties}
               aria-label={link.label}
             >
-              <Image 
-                src={link.icon}
-                alt={link.label} 
-                height={32}
-                width={32} 
-                loading="eager" 
-                className="transition-[filter] group-hover:[filter:drop-shadow(0_0_4px_var(--link-shadow))_drop-shadow(0_0_14px_var(--link-shadow))_drop-shadow(0_0_26px_var(--link-shadow))]"
-              />
+              <Image src={link.icon} alt="" width={24} height={link.label === "X" ? 25 : 24} className="opacity-60 transition-[filter,opacity,transform] group-hover:scale-110 group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_8px_var(--link-shadow))] motion-reduce:transform-none" />
             </NextLink>
-          )}
-      </div>
+          ))}
+        </div>
+      </footer>
     </div>
   );
 }

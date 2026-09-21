@@ -3,7 +3,7 @@ const Title = () => {
         <h1 className="w-full" aria-label="HYDROXIOS">
         <svg
           aria-hidden="true"
-          className="mx-auto h-auto w-full max-w-3xl"
+          className="h-auto w-full max-w-5xl"
           viewBox="0 0 840 150"
           role="img"
         >
@@ -29,7 +29,7 @@ const Title = () => {
                 type="translate"
                 from="0 0"
                 to="720 -720"
-                dur="5s"
+                dur="7s"
                 repeatCount="indefinite"
               />
             </linearGradient>
@@ -40,7 +40,7 @@ const Title = () => {
             textAnchor="middle"
             fill="none"
             stroke="url(#hydroxios-rainbow)"
-            strokeWidth="2.75"
+            strokeWidth="2.4"
             strokeLinecap="round"
             strokeLinejoin="round"
             fontFamily="Arial Black, var(--font-geist-sans), Arial, sans-serif"
