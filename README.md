@@ -71,3 +71,9 @@ npm run lint
 ```
 
 Runs ESLint.
+
+```bash
+npm run pack:info -- "path/to/pack.zip"
+```
+
+Prints the file's SHA256 and size in bytes as JSON. Copy the `sha256` and `size` values into the pack's `archive` object in `data/packs.json`. Files are streamed so large archives do not have to fit in memory.

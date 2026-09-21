@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 8001",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pack:info": "node scripts/pack-info.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
