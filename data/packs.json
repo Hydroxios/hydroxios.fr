@@ -1,0 +1,17 @@
+[
+  {
+    "id": "hxpack",
+    "name": "HxPack",
+    "version": "0.1.0",
+    "minecraft": "1.20.1",
+    "loader": {
+      "type": "forge",
+      "version": "47.4.23"
+    },
+    "archive": {
+      "url": "https://ton-site.fr/packs/mon-pack-1.0.0.zip",
+      "sha256": "...",
+      "size": 524288000
+    }
+  }
+]
