@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { NextResponse } from "next/server";
+import type { Pack } from "@/app/types/pack";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -8,7 +9,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
     try {
         const file = await readFile(path.join(process.cwd(), "data", "packs.json"), "utf8");
-        const packs: unknown = JSON.parse(file);
+        const packs: Pack[] = JSON.parse(file);
 
         if (!Array.isArray(packs)) {
             throw new Error("data/packs.json must contain an array");

@@ -4,3 +4,8 @@ export interface Link {
     icon: string
     color?: string
 }
+
+export interface Loader {
+    type: string
+    version: string
+}
