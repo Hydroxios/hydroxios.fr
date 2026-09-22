@@ -8,10 +8,12 @@
     "start": "next start -p 8001",
     "lint": "eslint",
     "test": "node --test scripts/*.test.mjs",
+    "test:dashboard": "node scripts/dashboard-integration.mjs",
     "pack:info": "node scripts/pack-info.mjs"
   },
   "dependencies": {
-    "next": "16.2.10",
+    "next": "^16.3.5",
+    "next-auth": "^4.24.15",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-player": "^3.4.0",
@@ -24,7 +26,7 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.185.0",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "^16.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

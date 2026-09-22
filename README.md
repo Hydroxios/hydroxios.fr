@@ -11,9 +11,10 @@ Personal website for Hydroxios, built with Next.js. The site highlights Minecraf
 
 ## Pages
 
-- `/` - Home page with the Hydroxios hero, project links, and social links.
-- `/minecraft` - Mods, plugins, packs and installation guidance. Demo entries are labeled and cannot be downloaded.
+- `/` - Home page with project links and social links.
+- `/minecraft` - Mods, plugins and packs. Demo entries are labeled and cannot be downloaded.
 - `/discord` - Discord bot catalog with invitation links.
+- `/dashboard` - Private catalog editor with Discord authentication. See [dashboard setup](DASHBOARD.md).
 
 ## Project Structure
 
@@ -22,7 +23,7 @@ app/
   page.tsx                 Home page
   layout.tsx               Root layout and metadata
   globals.css              Global styles and Tailwind import
-  components/Title.tsx     Animated Hydroxios title
+  dashboard/              Private catalog editor
   discord/page.tsx         Discord bots page
   minecraft/page.tsx       Minecraft projects page
   types/index.ts           Shared TypeScript types
@@ -71,6 +72,8 @@ npm run lint
 ```
 
 Runs ESLint.
+
+Run `npm test` for unit tests. After `npm run build`, run `npm run test:dashboard` to check authentication and catalog writes against a disposable server and temporary data.
 
 ```bash
 npm run pack:info -- "path/to/pack.zip"

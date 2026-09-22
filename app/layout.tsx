@@ -50,7 +50,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased [scrollbar-width:thin] [scrollbar-color:#737373_#171717] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-neutral-900 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb:hover]:bg-neutral-400 motion-reduce:scroll-auto motion-reduce:[&_*]:scroll-auto motion-reduce:[&_*]:animate-none motion-reduce:[&_*]:transition-none motion-reduce:[&_*::before]:animate-none motion-reduce:[&_*::after]:animate-none motion-reduce:[&_*::before]:transition-none motion-reduce:[&_*::after]:transition-none`}
     >
-      <body className="flex min-h-full flex-col bg-background pt-[76px] font-sans text-foreground">
+      <body className="flex min-h-full flex-col bg-background pt-[76px] font-sans text-foreground [&_button:not(:disabled)]:cursor-pointer [&_button:disabled]:cursor-not-allowed [&_input[type=submit]:not(:disabled)]:cursor-pointer [&_input[type=button]:not(:disabled)]:cursor-pointer [&_input[type=reset]:not(:disabled)]:cursor-pointer [&_select:not(:disabled)]:cursor-pointer [&_input[type=checkbox]:not(:disabled)]:cursor-pointer [&_summary]:cursor-pointer">
         <Navbar />
         {children}
       </body>
