@@ -29,29 +29,17 @@ const PROJECTS = [
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-black text-white selection:bg-cyan-200 selection:text-black">
+    <div className="relative flex min-h-[calc(100vh-76px)] flex-col overflow-x-hidden bg-black text-white selection:bg-cyan-200 selection:text-black">
       <PcbBackground />
       <div className="pointer-events-none fixed inset-0 z-[1] bg-black/48" />
       <div className="pointer-events-none fixed inset-0 z-[2] bg-[radial-gradient(circle_at_50%_25%,transparent_0%,rgba(0,0,0,0.2)_50%,rgba(0,0,0,0.78)_100%)]" />
 
-      <header className="relative z-10 mx-auto flex w-full max-w-[1500px] items-center justify-between px-6 py-4 sm:px-10">
-        <NextLink href="/" className="flex items-center gap-2.5 text-sm font-semibold tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200" aria-label="Accueil Hydroxios">
-          <Image src="/logo.png" alt="" width={646} height={646} priority className="size-11 object-contain" />
-          <span>Hydroxios</span>
-        </NextLink>
-
-        <nav aria-label="Navigation principale" className="flex items-center gap-5 text-sm text-white/55 sm:gap-7">
-          <a href="#twitch" className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200">Twitch</a>
-          <a href="#projets" className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200">Projets</a>
-        </nav>
-      </header>
-
       <main className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-1 flex-col px-6 pb-8 sm:px-10 mt-20">
-        <section id="twitch" className="scroll-mt-4">
+        <section id="twitch" className="scroll-mt-24">
           <TwitchEmbed />
         </section>
 
-        <section id="projets" className="scroll-mt-6 py-12 sm:py-16" aria-labelledby="projects-title">
+        <section id="projets" className="scroll-mt-24 py-12 sm:py-16" aria-labelledby="projects-title">
           <div className="mb-5 flex items-end justify-between gap-5">
             <div>
               <h2 id="projects-title" className="text-2xl font-semibold">Projets</h2>
