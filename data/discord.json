@@ -3,7 +3,7 @@
     "id": "fireteam-maker",
     "name": "FireteamMaker",
     "url": "https://discord.com/oauth2/authorize?client_id=606202086048268319",
-    "icon": "",
+    "version": "1.0",
     "description": "Créez vos escouades directement sur Discord."
   }
 ]

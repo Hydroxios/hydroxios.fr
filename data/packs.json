@@ -2,7 +2,7 @@
   {
     "id": "hxpack",
     "name": "HxPack",
-    "version": "0.1.0",
+    "version": "indev",
     "minecraft": "1.20.1",
     "loader": {
       "type": "forge",
@@ -12,7 +12,6 @@
     "description": "Pack en préparation.",
     "archive": {
       "url": "https://example.com/packs/hxpack-0.1.0.zip"
-    },
-    "icon": ""
+    }
   }
 ]

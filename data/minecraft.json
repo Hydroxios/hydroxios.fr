@@ -1,30 +1,14 @@
 [
   {
-    "id": "demo-trailstones",
-    "name": "Trailstones",
+    "name": "ChaoticRGB",
+    "id": "chaoticrgb",
     "version": "0.1.0",
+    "demo": true,
+    "loader": {
+      "type": "neoforge",
+      "version": "21.1.247"
+    },
     "type": "mod",
-    "minecraft": "1.20.1",
-    "loader": {
-      "type": "Forge",
-      "version": "47.4.23"
-    },
-    "demo": true,
-    "description": "Des pierres de voyage pour relier les lieux de votre monde.",
-    "icon": ""
-  },
-  {
-    "id": "demo-server-compass",
-    "name": "Server Compass",
-    "version": "0.1.0",
-    "type": "plugin",
-    "minecraft": "1.20.1",
-    "loader": {
-      "type": "Paper",
-      "version": "1.20.1"
-    },
-    "demo": true,
-    "description": "Un menu pour accueillir les joueurs et explorer le serveur.",
-    "icon": ""
+    "minecraft": "1.21.1"
   }
 ]
