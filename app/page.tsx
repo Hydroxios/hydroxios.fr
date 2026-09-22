@@ -22,7 +22,7 @@ const PROJECTS = [
   {
     title: "Discord",
     description: "Bots et intégrations pour les communautés Discord.",
-    href: "/discord-bots",
+    href: "/discord",
     accent: "#9b7cff",
   },
 ] as const;

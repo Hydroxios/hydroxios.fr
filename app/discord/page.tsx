@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Les bots Discord et automatisations créés par Hydroxios.",
 };
 
-export default function DiscordBotsPage() {
+export default function DiscordPage() {
   return (
     <ProjectPage
       category="Bots, intégrations et communautés"
