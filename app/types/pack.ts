@@ -3,7 +3,10 @@ import type { Loader } from "."
 export interface Pack {
     id: string
     name: string
+    icon?: string
     version: string
+    description?: string
+    demo?: boolean
     minecraft: string
     loader: Loader
     archive: Archive
@@ -11,6 +14,6 @@ export interface Pack {
 
 interface Archive {
     url: string
-    sha256: string
-    size: number
+    sha256?: string
+    size?: number
 }

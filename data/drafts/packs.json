@@ -8,11 +8,10 @@
       "type": "forge",
       "version": "47.4.23"
     },
-    "demo": true,
-    "description": "Pack en préparation.",
     "archive": {
-      "url": "https://example.com/packs/hxpack-0.1.0.zip"
-    },
-    "icon": ""
+      "url": "https://ton-site.fr/packs/mon-pack-1.0.0.zip",
+      "sha256": "...",
+      "size": 524288000
+    }
   }
 ]

@@ -3,7 +3,10 @@ import type { Loader } from "."
 interface MinecraftProjectBase {
     id: string
     name: string
+    icon?: string
     version: string
+    description?: string
+    demo?: boolean
     minecraft: string
     download?: string
     loader: Loader
