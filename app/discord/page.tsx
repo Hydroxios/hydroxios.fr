@@ -15,7 +15,7 @@ export default async function DiscordPage() {
   return (
     <ProjectPage
       title="Discord"
-      accent="#9b7cff"
+      accent="discord"
     >
       <CatalogSection id="bots" title="Les bots" count={bots.length}>
         {bots.map(bot => <CatalogCard key={bot.id} name={bot.name} icon={bot.icon} category="Bot Discord" description={bot.description}>

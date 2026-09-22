@@ -1,15 +1,14 @@
 import Image from "next/image";
 import NextLink from "next/link";
-import type { CSSProperties } from "react";
 import PcbBackground from "./components/PcbBackground";
 import TwitchEmbed from "./components/TwitchEmbed";
 import type { Link } from "./types";
 
-const SOCIAL_LINKS: Link[] = [
-  { label: "YouTube", href: "https://www.youtube.com/@Hydroxios", icon: "/youtube.svg", color: "rgba(255, 0, 0, 0.7)"},
-  { label: "Twitch", href: "https://www.twitch.tv/hydroxios", icon: "/twitch.svg", color: "rgba(145, 70, 255, 0.95)"},
-  { label: "GitHub", href: "https://github.com/hydroxios", icon: "/github.svg", color: "rgba(255, 255, 255, 0.6)"},
-  { label: "X", href: "https://x.com/Hydroxios", icon: "/x.svg", color: "rgba(255, 255, 255, 0.6)"},
+const SOCIAL_LINKS: (Link & { className: string })[] = [
+  { label: "YouTube", href: "https://www.youtube.com/@Hydroxios", icon: "/youtube.svg", className: "[--link-shadow:rgba(255,0,0,0.7)]"},
+  { label: "Twitch", href: "https://www.twitch.tv/hydroxios", icon: "/twitch.svg", className: "[--link-shadow:rgba(145,70,255,0.95)]"},
+  { label: "GitHub", href: "https://github.com/hydroxios", icon: "/github.svg", className: "[--link-shadow:rgba(255,255,255,0.6)]"},
+  { label: "X", href: "https://x.com/Hydroxios", icon: "/x.svg", className: "[--link-shadow:rgba(255,255,255,0.6)]"},
 ];
 
 const PROJECTS = [
@@ -17,13 +16,13 @@ const PROJECTS = [
     title: "Minecraft",
     description: "Mods, plugins et outils pour Minecraft.",
     href: "/minecraft",
-    accent: "#58f0b5",
+    className: "[--project-accent:#58f0b5]",
   },
   {
     title: "Discord",
     description: "Bots et intégrations pour les communautés Discord.",
     href: "/discord",
-    accent: "#9b7cff",
+    className: "[--project-accent:#9b7cff]",
   },
 ] as const;
 
@@ -52,8 +51,7 @@ export default function Home() {
               <NextLink
                 key={project.href}
                 href={project.href}
-                className="group relative overflow-hidden border border-white/15 bg-black/35 p-6 transition-all hover:-translate-y-0.5 hover:border-white/35 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 motion-reduce:transform-none sm:p-7"
-                style={{ "--project-accent": project.accent } as CSSProperties}
+                className={`${project.className} group relative overflow-hidden border border-white/15 bg-black/35 p-6 transition-all hover:-translate-y-0.5 hover:border-white/35 hover:bg-black/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 motion-reduce:transform-none sm:p-7`}
               >
                 <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[var(--project-accent)] via-[var(--project-accent)]/60 to-transparent" />
                 <div className="flex items-start justify-between gap-6">
@@ -78,8 +76,7 @@ export default function Home() {
               href={link.href}
               target={"_blank"}
               rel={"noreferrer"}
-              className="group grid size-10 place-items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
-              style={{ "--link-shadow": link.color ?? "rgba(255, 255, 255, 0.45)" } as CSSProperties}
+              className={`${link.className} group grid size-10 place-items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200`}
               aria-label={link.label}
             >
               <Image src={link.icon} alt="" width={24} height={link.label === "X" ? 25 : 24} className="opacity-60 transition-[filter,opacity,transform] group-hover:scale-110 group-hover:opacity-100 group-hover:[filter:drop-shadow(0_0_8px_var(--link-shadow))] motion-reduce:transform-none" />

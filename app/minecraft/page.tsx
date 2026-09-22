@@ -15,7 +15,7 @@ export default async function MinecraftPage() {
   return (
     <ProjectPage
       title="Minecraft"
-      accent="#58f0b5"
+      accent="minecraft"
     >
       <nav className="flex flex-wrap gap-2 [&_a]:border [&_a]:border-white/20 [&_a]:px-4 [&_a]:py-3 [&_a]:text-sm [&_a:hover]:border-[var(--accent)] [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-cyan-200" aria-label="Ressources Minecraft"><a href="#creations">Mods & plugins</a><a href="#packs">Packs</a></nav>
       {projects.some(project => project.demo) && <p className="mt-6 text-sm text-slate-400">Démo : projets fictifs, sans téléchargement.</p>}

@@ -129,9 +129,7 @@ export default function PcbBackground() {
     });
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    renderer.domElement.style.display = "block";
-    renderer.domElement.style.height = "100%";
-    renderer.domElement.style.width = "100%";
+    renderer.domElement.className = "block h-full w-full";
     host.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();

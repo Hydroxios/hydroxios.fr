@@ -47,9 +47,10 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased [scrollbar-width:thin] [scrollbar-color:#737373_#171717] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-neutral-900 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb:hover]:bg-neutral-400 motion-reduce:scroll-auto motion-reduce:[&_*]:scroll-auto motion-reduce:[&_*]:animate-none motion-reduce:[&_*]:transition-none motion-reduce:[&_*::before]:animate-none motion-reduce:[&_*::after]:animate-none motion-reduce:[&_*::before]:transition-none motion-reduce:[&_*::after]:transition-none`}
     >
-      <body className="min-h-full flex flex-col pt-[76px]">
+      <body className="flex min-h-full flex-col bg-background pt-[76px] font-sans text-foreground">
         <Navbar />
         {children}
       </body>

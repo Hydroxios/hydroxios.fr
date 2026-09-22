@@ -1,15 +1,15 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import PcbBackground from "./PcbBackground";
 
 type ProjectPageProps = {
   title: string;
-  accent: string;
+  accent: "minecraft" | "discord";
   children: ReactNode;
 };
 
 export default function ProjectPage({ title, accent, children }: ProjectPageProps) {
   return (
-    <div className="relative min-h-[calc(100vh-76px)] overflow-hidden bg-black text-white" style={{ "--accent": accent } as CSSProperties}>
+    <div className={`relative min-h-[calc(100vh-76px)] overflow-hidden bg-black text-white ${accent === "minecraft" ? "[--accent:#58f0b5]" : "[--accent:#9b7cff]"}`}>
       <PcbBackground />
       <div className="pointer-events-none fixed inset-0 z-[1] bg-black/62" />
       <div className="pointer-events-none fixed inset-0 z-[2] bg-[radial-gradient(circle_at_70%_30%,color-mix(in_srgb,var(--accent)_12%,transparent),transparent_42%)]" />
