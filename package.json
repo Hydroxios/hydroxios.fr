@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8001",
+    "start": "next start",
     "lint": "eslint",
     "test": "node --test scripts/*.test.mjs",
     "test:dashboard": "node scripts/dashboard-integration.mjs",
